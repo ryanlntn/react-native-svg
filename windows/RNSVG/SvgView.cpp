@@ -5,9 +5,6 @@
 #include "SvgView.g.cpp"
 #endif
 
-#include <winrt/Windows.UI.Xaml.Media.h>
-#include <winrt/Windows.UI.Xaml.Shapes.h>
-
 #include "GroupView.h"
 
 #include "SVGLength.h"

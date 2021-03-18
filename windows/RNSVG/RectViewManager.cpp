@@ -7,9 +7,6 @@
 #include "JSValueReader.h"
 #include "JSValueXaml.h"
 
-#include <winrt/Windows.UI.Xaml.Media.h>
-#include <winrt/Windows.UI.Xaml.Shapes.h>
-
 #include "RectView.h"
 
 using namespace winrt;
@@ -17,7 +14,6 @@ using namespace Microsoft::ReactNative;
 using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml::Controls;
 using namespace Windows::UI::Xaml::Media;
-using namespace Windows::UI::Xaml::Shapes;
 
 namespace winrt::RNSVG::implementation
 {

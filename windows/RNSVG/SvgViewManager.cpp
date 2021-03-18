@@ -4,9 +4,6 @@
 #include "SvgViewManager.g.cpp"
 #endif
 
-#include <winrt/Windows.UI.Xaml.Media.h>
-#include <winrt/Windows.UI.Xaml.Shapes.h>
-
 #include "SvgView.h"
 
 namespace winrt

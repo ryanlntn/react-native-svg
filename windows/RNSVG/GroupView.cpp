@@ -7,8 +7,6 @@
 #include "GroupView.g.cpp"
 #endif
 
-#include <winrt/Windows.UI.Xaml.Media.h>
-
 namespace winrt::RNSVG::implementation
 {
   GroupView::GroupView(Microsoft::ReactNative::IReactContext const &context) : m_reactContext(context)

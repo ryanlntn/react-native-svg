@@ -5,7 +5,6 @@
 #endif
 
 #include <winrt/Microsoft.Graphics.Canvas.Geometry.h>
-#include <winrt/Windows.UI.Xaml.Media.h>
 
 #include "JSValueReader.h"
 #include "JSValueXaml.h"
