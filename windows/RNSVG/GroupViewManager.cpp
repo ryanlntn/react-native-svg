@@ -67,7 +67,7 @@ namespace winrt::RNSVG::implementation
       if (auto childView = child.try_as<RenderableView>())
       {
         //childView.SetParent(groupView);
-        childView.SetParent(parent);
+        //childView.SetParent(parent);
         groupView->AddChild(childView);
       }
     }

@@ -1,17 +1,14 @@
 #pragma once
 
+#include "RenderableView.h"
 #include "RectView.g.h"
-
 #include "GroupView.h"
 
 namespace winrt::RNSVG::implementation
 {
-    struct RectView : RectViewT<RectView>
+    struct RectView : RectViewT<RectView, RNSVG::implementation::RenderableView>
     {
         RectView() = default;
-
-        Windows::UI::Color Color() { return m_fill; }
-        void Color(Windows::UI::Color value) { m_fill = value; }
 
         void SetParent(Windows::UI::Xaml::FrameworkElement const& parent) { m_parent = parent.try_as<RNSVG::GroupView>(); }
 
@@ -21,9 +18,6 @@ namespace winrt::RNSVG::implementation
     private:
         weak_ref<RNSVG::GroupView> m_parent;
 
-        Windows::UI::Color m_fill{Windows::UI::Colors::Transparent()};
-        Windows::UI::Color m_stroke{Windows::UI::Colors::Transparent()};
-        float m_strokeWidth{0.0f};
         float m_width{0.0f};
         float m_height{0.0f};
         float m_x{0.0f};

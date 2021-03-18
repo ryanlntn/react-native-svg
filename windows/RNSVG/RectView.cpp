@@ -55,24 +55,9 @@ namespace winrt::RNSVG::implementation
             auto svgLength{SVGLength::From(propertyValue)};
             m_ry = static_cast<float>(svgLength.Value());
           }
-          else if (propertyName == "strokeWidth")
+          else
           {
-            auto svgLength{SVGLength::From(propertyValue)};
-            m_strokeWidth = static_cast<float>(svgLength.Value());
-          }
-          else if (propertyName == "stroke")
-          {
-            if (auto color = Utils::GetColorFromJSValue(propertyValue))
-            {
-              m_stroke = color.value();
-            }
-          }
-          else if (propertyName == "fill")
-          {
-            if (auto color = Utils::GetColorFromJSValue(propertyValue))
-            {
-              m_fill = color.value();
-            }
+            RenderableView::UpdateProperties(reader);
           }
         }
 
@@ -90,13 +75,11 @@ namespace winrt::RNSVG::implementation
       auto rect{Microsoft::Graphics::Canvas::Geometry::CanvasGeometry::CreateRoundedRectangle(
           resourceCreator, m_x, m_y, m_width, m_height, m_rx, m_ry)};
       
-      session.FillGeometry(rect, m_fill);
+      session.FillGeometry(rect, Fill());
 
-      if (m_strokeWidth > 0.0f)
+      if (StrokeWidth() > 0.0f)
       {
-        session.DrawGeometry(rect, m_stroke, m_strokeWidth);
+        session.DrawGeometry(rect, Stroke(), StrokeWidth());
       }
-
-      //session.DrawRoundedRectangle(m_x, m_y, m_width, m_height, m_rx, m_ry, color, m_strokeWidth);
     }
 } // namespace winrt::RNSVG::implementation
